@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from typing import Optional
 
 app= FastAPI()
 class Item(BaseModel):
@@ -13,6 +14,7 @@ class Item(BaseModel):
 def index():
     return {"message":"Hello World"}
 
+    
 
 @app.put('/item/{item_id}')
 def update_item(item_id:int, item:Item):
